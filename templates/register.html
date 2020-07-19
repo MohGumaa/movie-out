@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="wrapper mt-2">
+    <div class="Welcome-info">
+      <h1>Hello, Friend!</h1>
+      <p>Enter your personal details and start journey with us.</p>
+    </div>
+
+    <!-- Form Login -->
+    <div class="contact">
+      <h2 class="text-center">Registeration Form</h2>
+      <form action="/register" method="post" class="mt-5">
+        <p>
+          <label for="username">Username</label>
+          <input autocomplete="off" autofocus class="form-control" name="username" id="username" placeholder="Enter Username" type="text">
+        </p>
+        <p>
+          <label for="email">Email Address</label>
+          <input class="form-control" name="email" placeholder="Enter Email Address" type="email">
+        </p>
+        <p>
+          <label for="password">Enter password</label>
+          <input class="form-control" name="password" placeholder="Password" type="password">
+        </p>
+        <p>
+            <label for="confirmation">Reconfirmation</label>
+            <input class="form-control" name="confirmation" placeholder="Re-enter your password" type="password">
+        </p>
+        <p class="full"><button class="btn btn-primary" type="submit">Register</button></p>
+      </form>
+    </div>
+    </div>
+  </div>
+{% endblock %}

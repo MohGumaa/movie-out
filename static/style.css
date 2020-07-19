@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin:0;
+  padding: 0px;
+  color: #485e74;
+  line-height: 1.6;
+}
+
+.alert{
+  width: 98%;
+}
+
+/* Form Registeration and login*/
+.wrapper {
+  box-shadow: 0 0 20px rgba(72, 94, 116, 0.7);
+}
+
+.Welcome-info{
+
+  background: #c9e6ff;
+  text-align: center;
+}
+
+.contact {
+  background: #f9feff;
+}
+
+.contact form label {
+  display: block;
+}
+
+.contact form button,
+input,
+textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #c9e6ff;
+}
+
+button {
+  background: #c9e6ff;
+  border: 0;
+  text-transform: uppercase;
+}
+
+button:focus,
+button:hover {
+  background: #92bde7;
+  color: #fff;
+  outline: 0;
+  transition: background-color 2s ease-out;
+}
+
+/* Images*/
+#movies img {
+  width:100%;
+}
+
+
+/* Media For Large Screen */
+@media (min-width: 700px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .wrapper > * {
+    padding: 2em;
+  }
+
+}
+
+/* Media For Large Screen */
+@media(min-width:960px){
+  #movies .col-md-3 {
+    height:390px;
+  }
+
+  #movies .col-md-3 img {
+    height:240px;
+  }
+
+  .card-text {
+    white-space: nowrap;
+    font-size:0.75rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+
+ /*Full Background image index*/
+  .showcase::after {
+    content: "";
+    height: 100vh;
+    width: 100%;
+    background: url('https://source.unsplash.com/1600x900/?movies') no-repeat center/cover;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+  }
+
+  .showcase:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+  }
+
+  .showcase:hover .content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+  }
+
+  .content {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+  }
+
+  .showcase .title {
+    font-size: 3.2rem;
+    margin-top: 1rem;
+  }
+
+  .showcase .text {
+    line-height: 1.7;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+}

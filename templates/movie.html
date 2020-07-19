@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Movie Details
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="jumbotron">
+      <div class="row">
+          <div class="col-md-4">
+              <img src="{{details.Poster}}" class="thumbnail" alt="movie image">
+          </div>
+          <div class="col-md-8">
+            <h2>{{details.Title}}</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Genre: </strong>{{details.Title}}</li>
+                <li class="list-group-item"><strong>Released: </strong>{{details.Released}}</li>
+                <li class="list-group-item"><strong>Rated: </strong>{{details.Rated}}</li>
+                <li class="list-group-item"><strong>imdbRating: </strong>{{details.imdbRating}}</li>
+                <li class="list-group-item"><strong>Director: </strong>{{details.Director}}</li>
+                <li class="list-group-item"><strong>Writer: </strong>{{details.Writer}}</li>
+                <li class="list-group-item"><strong>Actors: </strong>{{details.Actors}}</li>
+                <li class="list-group-item"><strong>Runtime: </strong>{{details.Runtime}}</li>
+            </ul>
+          </div>
+      </div>
+      <div class="row">
+          <div class="well">
+              <div class="card-body">
+                <h3 class="card-title">Plot</h3>
+                <p class="text-muted">{{details.Plot}}</p>
+              </div>
+              <hr>
+              <div class="d-flex flex-row">
+                <div>
+                  <a class="btn btn-secondary" href="/add_comment/{{details.Title}}">Add comment</a>
+                </div>
+                <div class="ml-3">
+                  <form action="/movie/{{details.imdbID}}" method="post">
+                    <button class="btn btn-success">Add To my List</button>
+                  </form>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+     <h2 class="mt-5 h2">Reveiws :</h2>
+      <div>
+        <ul class="list-group list-group">
+          {% for review in reviews %}
+            <li class="list-group-item">
+              <div class="card">
+                <div class="card-header">
+                  <h3>{{review.username}}</h3>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">{{review.comment}}.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated {{review.publish_date}}</small>
+                </div>
+              </div>
+            </li>
+          {% else %}
+            <li class="list-group-item"><h1>No Review</h1></li>
+            <li class="list-group-item"><p class="font-weight-light">Be the First</p></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

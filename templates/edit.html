@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Comment
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+      <div class="jumbotron">
+          {% for review in reviews %}
+           <h2 class = "mb-3">Edit Your Comment</h2>
+           <hr>
+           <form method="POST" action="">
+               <div class="form-group">
+                <label for="formGroupExampleInput"><small>{{review.movie_title}}</small></label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="edit" placeholder="Enter Here..." value="{{review.comment}}">
+               </div>
+               <button type="submit" class="btn btn-primary">Submit</button>
+           </form>
+           {% else %}
+           <h2>No Comment</h2>
+          {% endfor %}
+      </div>
+  </div>
+{% endblock %}
+

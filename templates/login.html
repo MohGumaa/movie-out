@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="wrapper mt-2">
+      <div class="Welcome-info">
+        <h3>Welcome Back!</h3>
+        <p class="lead text-justify">To keep connected with us please login with your personal info.</p>
+      </div>
+
+      <!-- Form Login -->
+      <div class="contact">
+        <form action="/login" method="post" class="mt-5">
+          <p>
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="username"  placeholder="Enter Username">
+          </p>
+          <p>
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+          </p>
+          <p class="full"><button type="submit">Log In</button></p>
+      </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

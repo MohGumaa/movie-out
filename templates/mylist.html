@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   My Lists
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h3>My list:</h3>
+    <hr>
+    <div class="row" id="movie">
+        {% for movie in movies %}
+            <div class="col-md-4 mb-3">
+                <div class="card-deck text-center">
+                    <div class="card">
+                        <img class="card-img-top" src="{{movie.poster}}" alt="Card image cap">
+                        <div class="card-body text-white bg-secondary ">
+                        <p class="card-text">{{movie.title}}</p>
+                        <div class="d-flex flex-row justify-content-center">
+                          <div>
+                            <a href="/edit_comment/{{movie.title}}" class="btn btn-info">Edit Comment</a>
+                          </div>
+                          <div class="ml-3">
+                            <form action="/delete/{{movie.id}}" method="post">
+                              <input type="hidden" name="_method" value"DELETE">
+                              <input type="Submit" value="Delete From list" class="btn btn-danger">
+                            </form>
+                          </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+          <h2 class="font-italic">You Did't Add Any Movie </h2>
+        {% endfor%}
+    </div>
+  </div>
+{% endblock %}
+

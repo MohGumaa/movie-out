@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Your Comment
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+      <div class="jumbotron">
+       <form method="POST" action="">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Add Comment</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="comment" placeholder="Enter Here">
+            </div>
+
+           <button type="submit" class="btn btn-primary">Submit</button>
+       </form>
+      </div>
+  </div>
+{% endblock %}
+
